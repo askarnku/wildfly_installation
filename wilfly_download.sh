@@ -10,6 +10,7 @@ sudo wget https://github.com/wildfly/wildfly/releases/download/32.0.1.Final/wild
 sudo tar -xvf wildfly-32.0.1.Final.tar.gz -C /opt/
 
 #rename wildfly-14.0.1.Final.tar.gz to as
+cd /opt
 sudo mv wildfly-32.0.1.Final/ wildfly
 
 # Add wildfly user and change ownership of /opt/wildfly to user: wildfly
