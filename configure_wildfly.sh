@@ -20,6 +20,10 @@ if [ ! -d "/var/log/wildfly" ]; then
     sudo chown -R $JBOSS_USER:$JBOSS_USER "/var/log/wildfly"
 fi
 
+# Create the log file and set the correct permissions
+sudo touch $JBOSS_CONSOLE_LOG
+sudo chown $JBOSS_USER:$JBOSS_USER $JBOSS_CONSOLE_LOG
+
 # Change ownership of the WildFly directory
 sudo chown -R $JBOSS_USER:$JBOSS_USER $JBOSS_HOME
 
