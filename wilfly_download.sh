@@ -1,7 +1,19 @@
 #!/bin/bash
 
+
+#Variables
+DOWNLOAD_LOCATION="/tmp"
+WILDFLY_URL="https://download.jboss.org/wildfly/14.0.0.Final/wildfly-14.0.0.Final.tar.gz"
+TAR_FILE="wildfly-14.0.0.Final.tar.gz"
+MV_LOCATION="/opt"
+OLD_NAME="wildfly-14.0.0.Final"
+NEW_NAME="wildfly"
+
+
+
+
 # Path to the file
-FILE="/tmp/wildfly-32.0.1.Final.tar.gz"
+FILE="/tmp/wildfly*"
 
 # Check if the file exists
 if [ -f "$FILE" ]; then
@@ -18,15 +30,15 @@ fi
 #Downloads and extracts wildfly
 
 # Download wildfly into /tmp
-cd /tmp
-sudo wget https://github.com/wildfly/wildfly/releases/download/32.0.1.Final/wildfly-32.0.1.Final.tar.gz
+cd $DOWNLOAD_LOCATION
+sudo wget $WILDFLY_URL
 
 #extract wilfly into /opt
-sudo tar -xvf wildfly-32.0.1.Final.tar.gz -C /opt/
+sudo tar -xvf "$TAR_FILE" -C "$MV_LOCATION"
 
 #rename wildfly-14.0.1.Final.tar.gz to as
-cd /opt
-sudo mv wildfly-32.0.1.Final/ wildfly
+cd $MV_LOCATION
+sudo "$OLD_NAME" "$NEW_NAME"
 
 # Add wildfly user and change ownership of /opt/wildfly to user: wildfly
 sudo adduser -r wildfly
