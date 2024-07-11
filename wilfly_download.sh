@@ -16,6 +16,8 @@ sudo mv wildfly-32.0.1.Final/ wildfly
 sudo adduser -r wildfly
 sudo chown -R wildfly:wildfly /opt/wildfly/
 
+#chekc it
+
 
 
 
