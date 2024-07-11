@@ -1,5 +1,20 @@
 #!/bin/bash
 
+# Path to the file
+FILE="/tmp/wildfly-32.0.1.Final.tar.gz"
+
+# Check if the file exists
+if [ -f "$FILE" ]; then
+    # If it exists, delete the file
+    sudo rm "$FILE"
+    # Output success message
+    echo "File $FILE deleted successfully."
+else
+    # Output message if file does not exist
+    echo "File $FILE does not exist."
+fi
+
+
 #Downloads and extracts wildfly
 
 # Download wildfly into /tmp
