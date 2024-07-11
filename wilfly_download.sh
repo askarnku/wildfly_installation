@@ -38,13 +38,19 @@ sudo tar -xvf "$TAR_FILE" -C "$MV_LOCATION"
 
 #rename wildfly-14.0.1.Final.tar.gz to as
 cd $MV_LOCATION
-sudo "$OLD_NAME" "$NEW_NAME"
+sudo mv "$OLD_NAME" "$NEW_NAME"
 
 # Add wildfly user and change ownership of /opt/wildfly to user: wildfly
 sudo adduser -r wildfly
 sudo chown -R wildfly:wildfly /opt/wildfly/
 
-#chekc it
+
+
+
+
+
+
+
 
 
 
