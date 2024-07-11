@@ -44,8 +44,14 @@ else
 fi
 
 
-echo 'export JAVA_HOME="/usr/lib/jvm/java-1.8.0-amazon-corretto"' >> ~/.bashrc
-echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
-source ~/.bashrc
+# Check if JAVA_HOME is already set
+if [ -z "$JAVA_HOME" ]; then
+    echo 'export JAVA_HOME="/usr/lib/jvm/java-1.8.0-amazon-corretto"' >> ~/.bashrc
+    echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
+    source ~/.bashrc
+    echo "JAVA_HOME set to /usr/lib/jvm/java-1.8.0-amazon-corretto and PATH updated."
+else
+    echo "JAVA_HOME is already set to $JAVA_HOME"
+fi
 
 
