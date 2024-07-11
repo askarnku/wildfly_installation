@@ -44,3 +44,8 @@ else
 fi
 
 
+echo 'export JAVA_HOME="/usr/lib/jvm/java-1.8.0-amazon-corretto"' >> ~/.bashrc
+echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+
+
