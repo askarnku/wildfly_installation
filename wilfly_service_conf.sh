@@ -4,6 +4,7 @@
 WILDFLY_CONFIG_DIR="/etc/wildfly"
 WILDFLY_SERVICE_FILE="/etc/systemd/system/wildfly.service"
 WILDFLY_LAUNCH_SCRIPT="/opt/wildfly/bin/launch.sh"
+SCRIPT_DIR="/opt/wildfly/docs/contrib/scripts/systemd"
 
 # Function to stop and remove WildFly service
 remove_wildfly_service() {
@@ -42,6 +43,9 @@ if [ -d "$WILDFLY_CONFIG_DIR" ] || [ -f "$WILDFLY_SERVICE_FILE" ] || [ -f "$WILD
 else
     echo "No existing WildFly configurations found. Proceeding with installation."
 fi
+
+# Navigate to the script directory
+cd $SCRIPT_DIR
 
 # Create WildFly config directory
 sudo mkdir -p /etc/wildfly
