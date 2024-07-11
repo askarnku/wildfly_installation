@@ -24,7 +24,7 @@ if [ $? -ne 0 ]; then
     fi
 else
     # Check if the installed Java version is 1.8
-    if [[ "$java_version" == *"1.8"* ]]; then
+    if [[ "$java_version" != *"1.8"* ]]; then
         echo "Your Java version is not compatible."
         # Offer to install a different Java version
         read -p "Would you like to install a different version of Java? (y/n) " response
