@@ -5,6 +5,7 @@
 
 # Check if Java is installed and capture the version output
 java_version=$(java -version 2>&1)
+echo $java_version
 
 # Check if Java is installed by seeing if the version command succeeded
 if [ $? -ne 0 ]; then
@@ -32,7 +33,7 @@ else
             sudo amazon-linux-extras enable corretto8
             sudo yum update && sudo yum upgrade -y
             sudo yum install -y java-1.8.0-amazon-corretto-devel
-            echo "Java 11 has been installed. Please configure it as needed."
+            echo "Java 8 has been installed. Please configure it as needed."
         else
             echo "No changes made to Java installation."
             exit 2
