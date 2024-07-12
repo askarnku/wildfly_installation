@@ -1,25 +1,24 @@
-# How to configure WildFly as a systemd service
+# Easy WildFly installation
 
-# Create a wildfly user
+1. Spin up EC2 instance (make sure inbound traffic accepts ALL TCP 0.0.0.0)
 
-    # groupadd -r wildfly
-    # useradd -r -g wildfly -d /opt/wildfly -s /sbin/nologin wildfly
+2. Install `git`:
+   `sudo yum install -y git`
 
-# Install WildFly
+3. Once git is installed, cd into your home directory:
+   `cd ~`
 
-    # tar xvzf wildfly-10.0.0.Final.tar.gz -C /opt
-    # ln -s /opt/wildfly-10.0.0.Final /opt/wildfly
-    # chown -R wildfly:wildfly /opt/wildfly
+4. Clone repository:
+   `git clone https://github.com/askarnku/wildfly_installation.git`
 
-# Configure systemd
+5. cd into folder:
+   `cd wildfly_installation`
 
-    # mkdir /etc/wildfly
-    # cp wildfly.conf /etc/wildfly/
-    # cp wildfly.service /etc/systemd/system/
-    # cp launch.sh /opt/wildfly/bin/
-    # chmod +x /opt/wildfly/bin/launch.sh
+6. Make `full_install_config.sh` executable:
+   `chmod +x full_install_config.sh`
 
-# Start and enable
+7. Run the script:
+   `./full_install_config.sh`
 
-    # systemctl start wildfly.service
-    # systemctl enable wildfly.service
+8. On your browser:
+   `<public-ip>:8080`
