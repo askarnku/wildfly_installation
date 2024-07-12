@@ -20,5 +20,7 @@
 7. Run the script:
    `./full_install_config.sh`
 
-8. On your browser:
+8. It will ask if it can install Java version is 1.8. Type yes.
+
+9. On your browser:
    `<public-ip>:8080`
