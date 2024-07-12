@@ -10,6 +10,9 @@ NEW_NAME="wildfly"
 TMP_FILE="/tmp/wildfly*"
 OPT_FILE="$MV_LOCATION/wildfly*"
 
+groupadd -r wildfly
+useradd -r -g wildfly -d /opt/wildfly -s /sbin/nologin wildfly
+
 # Check if the file exists in /tmp and delete it if it does
 if ls $TMP_FILE 1> /dev/null 2>&1; then
     sudo rm -rf $TMP_FILE
@@ -38,14 +41,6 @@ sudo tar -xvf "$TAR_FILE" -C "$MV_LOCATION"
 # Rename extracted folder
 cd $MV_LOCATION
 sudo mv "$OLD_NAME" "$NEW_NAME"
-
-# Check if the user "wildfly" exists, if not, create the user
-if id "wildfly" &>/dev/null; then
-    echo 'User "wildfly" already exists.'
-else
-    sudo adduser -r wildfly
-    echo 'User "wildfly" created successfully.'
-fi
 
 # Change ownership of /opt/wildfly to user: wildfly
 sudo chown -R wildfly:wildfly /opt/wildfly/
