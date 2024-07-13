@@ -10,8 +10,8 @@ NEW_NAME="wildfly"
 TMP_FILE="/tmp/wildfly*"
 OPT_FILE="$MV_LOCATION/wildfly*"
 
-groupadd -r wildfly
-useradd -r -g wildfly -d /opt/wildfly -s /sbin/nologin wildfly
+sudo groupadd -r wildfly
+sudo useradd -r -g wildfly -d /opt/wildfly -s /sbin/nologin wildfly
 
 # Check if the file exists in /tmp and delete it if it does
 if ls $TMP_FILE 1> /dev/null 2>&1; then
