@@ -13,7 +13,8 @@ OPT_FILE="$MV_LOCATION/wildfly*"
 sudo groupadd -r wildfly
 sudo useradd -r -g wildfly -d /opt/wildfly -s /sbin/nologin wildfly
 
-# Check if the file exists in /tmp and delete it if it does
+# Check if the all occurnces of wildfly* (dir or tar) exists in /tmp 
+# Deletes they exist
 if ls $TMP_FILE 1> /dev/null 2>&1; then
     sudo rm -rf $TMP_FILE
     echo "File(s) $TMP_FILE deleted successfully."
