@@ -1,4 +1,4 @@
-# Professional WildFly Installation Guide on EC2
+# WildFly Installation Guide on EC2
 
 ## Step-by-Step Instructions
 
