@@ -6,7 +6,7 @@ chmod +x standalone_conf.sh
 chmod +x wildfly_download.sh
 chmod +x wildfly_service.sh
 
-# Run the scripts in logical order
+# Run the scripts in order
 ./java_installation.sh
 if [ $? -ne 0 ]; then
   echo "Failed to run java_installation.sh"

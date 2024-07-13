@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Author: Askar
-# Description: This script will guide you through the steps of installing WildFly.
 
 # Check if Java is installed and capture the version output
 java_version=$(java -version 2>&1)
@@ -10,10 +9,8 @@ echo $java_version
 # Check if Java is installed by seeing if the version command succeeded
 if [ $? -ne 0 ]; then
     echo "You do not have Java installed."
-    # Prompt user to install Java
     read -p "Would you like to install Java? (y/n) " response
     if [[ $response =~ ^[Yy]$ ]]; then
-        # Update the package list and install Java
         sudo amazon-linux-extras enable corretto8
         sudo yum update && sudo yum upgrade -y
         sudo yum install -y java-1.8.0-amazon-corretto-devel
@@ -44,7 +41,7 @@ else
 fi
 
 
-# Check if JAVA_HOME is already set
+# JAVA_HOME config
 if [ -z "$JAVA_HOME" ]; then
     echo 'export JAVA_HOME="/usr/lib/jvm/java-1.8.0-amazon-corretto"' >> ~/.bashrc
     echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
